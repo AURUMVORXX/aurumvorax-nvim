@@ -59,16 +59,6 @@ require("lazy").setup({
   },
 
   {
-    "rmagatti/auto-session",
-    config = function()
-      require("auto-session").setup {
-        log_level = "error",
-        auto_session_suppress_dirs = {"~/", "~/Downloads"},
-      }
-    end
-  },
-
-  {
     "nvim-treesitter/nvim-treesitter",
     dependencies = {
       "nvim-treesitter/nvim-treesitter-context",
@@ -207,6 +197,14 @@ require("lazy").setup({
       })
     end
   },
+
+  {
+  "folke/persistence.nvim",
+  event = "BufReadPre", -- this will only start session saving when an actual file was opened
+  opts = {
+    -- add any custom options here
+  }
+},
 
   -- LSP
   {
