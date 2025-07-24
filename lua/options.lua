@@ -21,6 +21,8 @@ vim.opt.termguicolors = true
 vim.opt.scrolloff = 8
 vim.opt.sidescrolloff = 8
 
+vim.api.nvim_set_hl(0, "@lsp.type.variable.python", { fg = "#FF0000" })
+
 vim.diagnostic.config({
   virtual_text = true,
   signs = true,
