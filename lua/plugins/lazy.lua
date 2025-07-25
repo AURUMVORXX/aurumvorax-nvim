@@ -66,7 +66,7 @@ require("lazy").setup({
     build = ":TSUpdate",
     config = function()
       require("nvim-treesitter.configs").setup({
-        ensure_installed = { "python" },
+        ensure_installed = { "python", "c", "cpp" },
         highlight = { enable = true, additional_vim_regex_highlighting = false },
       })
     end,
@@ -79,6 +79,10 @@ require("lazy").setup({
     end,
   },
 
+
+  {
+  "kkoomen/vim-doge",
+},
   {
   "folke/snacks.nvim",
   priority = 1000,
@@ -130,7 +134,6 @@ require("lazy").setup({
     -- Other
     { "<leader>z",  function() Snacks.zen() end, desc = "Toggle Zen Mode" },
     { "<leader>Z",  function() Snacks.zen.zoom() end, desc = "Toggle Zoom" },
-    { "<leader>n",  function() Snacks.notifier.show_history() end, desc = "Notification History" },
     { "<leader>gg", function() Snacks.lazygit() end, desc = "Lazygit" },
     { "<leader>un", function() Snacks.notifier.hide() end, desc = "Dismiss All Notifications" },
   },
@@ -229,7 +232,7 @@ require("lazy").setup({
       end)
 
       require('mason-lspconfig').setup({
-        ensure_installed = { "pyright" },
+        ensure_installed = { "pyright", "clangd" },
         handlers = {
           -- this first function is the "default handler"
           -- it applies to every language server without a "custom handler"
